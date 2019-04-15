@@ -24,7 +24,7 @@
     </v-layout>
   </v-container>
 </template>
-<script>
+<script>    
 import axios from 'axios'
 export default {
     data() {
