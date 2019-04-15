@@ -3,16 +3,21 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
 
-router.get('/', function(req, res, next){
-  res.send({ a : 1 });
-})
 
-router.use('/test', require('./test'));
-router.use('/user', require('./user'));
+router.get('/', function(req, res, next) {
+  const us = [
+    {
+      name: '테스트1',
+      age: 14p
+    },
+    {
+      name: '테스트2',
+      age: 24
+    }
+  ]
+  res.send({ users: us })
+});
 
 router.all('*', function(req, res, next) {
   next(createError(404,'API를 찾을 수 없습니다.'));
