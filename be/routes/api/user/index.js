@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   const us = [
     {
       name: '테스트1',
-      age: 14p
+      age: 14
     },
     {
       name: '테스트2',
