@@ -33,3 +33,40 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const mongoose = require('mongoose')
+
+// const userSchema = new mongoose.Schema({
+//   name: { type: String, default: '', unique: true, index: true },
+//   age: { type: Number, default: 1 }
+// })
+
+// const User = mongoose.model('User', userSchema)
+const User = require('./models/users')
+
+mongoose.connect('mongodb://localhost:27017/mangbo', { useNewUrlParser: true }, (err) => {
+  if (err) return console.error(err)
+  console.log('mongoose connected!')
+//쓰기
+  // User.create({name: '하하' })
+  //   .then(r => console.log(r))
+  //   .catch(e => console.log(e))
+//읽기
+    // User.find()
+    // .then(r => console.log(r))
+    // .catch(e => console.log(e))
+//업데이트
+  // User.updateOne({ _id: '5cbd1e6662e8d634482fa922' }, { $set: { age: 27} })
+
+  // .then(r => {
+  //   console.log(r)
+  //   console.log('updated')
+  //   return User.find()
+  // })
+  // .then(r => console.log(r))
+  // .catch(e => console.error(e))
+// 삭제
+  // User.deleteOne({ name: '마이스터' })
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e))
+})
