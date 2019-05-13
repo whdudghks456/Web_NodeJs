@@ -34,6 +34,11 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
+const jwt = require('jsonwebtoken');
+const key = '마이스터고'
+const token = jwt.sign({ id: 'mangbo', email: 'whdudghks45629@gmail.com' }, key);
+console.log(token)
+
 const mongoose = require('mongoose')
 
 // const userSchema = new mongoose.Schema({
